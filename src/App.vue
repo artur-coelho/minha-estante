@@ -3,24 +3,43 @@
 </template>
 
 <script>
-
-
-export default {
-  name: 'App',
-
-}
+  export default {
+    name: 'App',
+  };
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
   * {
     box-sizing: border-box;
   }
 
   html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
   body {
     margin: 0;
+  }
+
+  .product-title {
+    margin: 0;
+    font-family: 'Birthstone Bounce', cursive;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 136px;
+    color: #fffafa;
+  }
+
+  .product-subtitle {
+    margin: 0 28px;
+    width: 426px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    color: #bdd6d2;
   }
 </style>

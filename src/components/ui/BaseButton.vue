@@ -26,13 +26,15 @@
   a {
     text-decoration: none;
     font: inherit;
-    font-family: Archivo, sans-serif;
+    font-family: 'Archivo', sans-serif;
     color: white;
     cursor: pointer;
     border: none;
     border-radius: 8px;
     margin-right: 0.5rem;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   a:hover,
@@ -52,7 +54,7 @@
   }
 
   .small {
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     font-weight: 600;
     font-size: 16px;
   }
@@ -60,9 +62,10 @@
   .big {
     width: 250px;
     height: 100px;
-    padding: 2rem 4rem;
+    padding: 2rem 0;
     font-weight: 700;
     font-size: 26px;
+    margin-right: 26px;
   }
 
   .orange:hover,
