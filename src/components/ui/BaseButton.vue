@@ -2,7 +2,7 @@
   <button v-if="!link" :class="[size, variant, display]">
     <slot></slot>
   </button>
-  <router-link v-else :to="to" :class="[size, variant, block]">
+  <router-link v-else :to="to" :class="[size, variant, display]">
     <slot></slot>
   </router-link>
 </template>
@@ -74,7 +74,7 @@
   }
 
   .flex {
-    display: inline;
+    display: flex;
   }
 
   .block {
