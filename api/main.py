@@ -13,6 +13,7 @@ def read_user(db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="User not found")
     return db_user
 
+# get user by id
 @app.get('/user/{id}')
 def read_user(id: int, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_id(db, id=id)
