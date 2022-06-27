@@ -20,7 +20,7 @@ from sqlalchemy.sql.sqltypes import Float
 from app.database import Base
 from datetime import datetime, timezone
 
-from app.schemas import AudioFormat, Operation, BiometricDecision, SpoofingDecision
+
 
 
 class User(Base):
