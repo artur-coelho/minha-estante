@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: 'App',
+  };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .product-title {
+    margin: 0;
+    font-family: 'Birthstone Bounce', cursive;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 136px;
+    color: #fffafa;
+  }
+
+  .product-subtitle {
+    margin: 0 28px;
+    width: 426px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    color: #bdd6d2;
+  }
 </style>
