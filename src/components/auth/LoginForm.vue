@@ -1,10 +1,16 @@
 <template>
   <form @submit.prevent="submitForm" class="login-form">
-    <input type="email" class="base-input top-input" placeholder="E-mail" />
+    <input
+      type="email"
+      class="base-input top-input"
+      placeholder="E-mail"
+      v-model="email"
+    />
     <input
       type="password"
       class="base-input bottom-input"
       placeholder="Senha"
+      v-model="password"
     />
     <div class="form-footer">
       <div>
@@ -26,13 +32,24 @@
 
 <script>
   export default {
+    emits: ['submit'],
     data() {
       return {
+        email: '',
+        password: '',
         rememberMe: false,
       };
     },
     methods: {
-      submitForm() {},
+      submitForm() {
+        const loginData = {
+          email: this.email,
+          password: this.password,
+          rememberMe: this.rememberMe,
+        };
+        
+        this.$emit('submit', loginData);
+      },
     },
   };
 </script>
