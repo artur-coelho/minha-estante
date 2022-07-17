@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitForm" class="login-form">
-    <input type="text" class="base-input top-input" placeholder="E-mail" />
+    <input type="email" class="base-input top-input" placeholder="E-mail" />
     <input
       type="password"
       class="base-input bottom-input"
@@ -39,7 +39,7 @@
 
 <style>
   .login-form {
-    width: 22rem;
+    width: 100%;
   }
 
   .base-input {
