@@ -1,8 +1,20 @@
 <template>
   <form @submit.prevent="submitForm" class="login-form">
     <input
-      type="email"
+      type="text"
       class="base-input top-input"
+      placeholder="Nome"
+      v-model="firstName"
+    />
+    <input
+      type="text"
+      class="base-input"
+      placeholder="Sobrenome"
+      v-model="lastName"
+    />
+    <input
+      type="email"
+      class="base-input"
       placeholder="E-mail"
       v-model="email"
     />
@@ -12,21 +24,7 @@
       placeholder="Senha"
       v-model="password"
     />
-    <div class="form-footer">
-      <div>
-        <input
-          type="checkbox"
-          name="remember-me"
-          id="remember-me"
-          v-model="rememberMe"
-        />
-        <label class="remember-label" for="remember-me">Lembrar-me</label>
-      </div>
-      <router-link class="forgot-psw-link" to="/forgotPassword"
-        >Esqueci minha senha</router-link
-      >
-    </div>
-    <base-button display="block">Entrar</base-button>
+    <base-button display="block">Concluir cadastro</base-button>
   </form>
 </template>
 
@@ -35,20 +33,21 @@
     emits: ['submit'],
     data() {
       return {
+        firstName: '',
+        lastName: '',
         email: '',
         password: '',
-        rememberMe: false,
       };
     },
     methods: {
       submitForm() {
-        const loginData = {
+        const registerData = {
+          firstName: this.firstName,
+          lastName: this.lastName,
           email: this.email,
           password: this.password,
-          rememberMe: this.rememberMe,
         };
-        
-        this.$emit('submit', loginData);
+        this.$emit('submit', registerData);
       },
     },
   };
@@ -77,6 +76,7 @@
 
   .bottom-input {
     border-radius: 0px 0px 8px 8px;
+    margin-bottom: 40px;
   }
 
   .form-footer {

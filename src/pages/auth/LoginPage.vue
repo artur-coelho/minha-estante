@@ -9,7 +9,7 @@
         <div class="login-title">
           <h2>Login</h2>
         </div>
-        <login-form></login-form>
+        <login-form @submit="login"></login-form>
       </div>
       <div class="login-footer">
         <span>Não possui sua estante digital?</span>
@@ -27,6 +27,11 @@
     components: {
       LoginForm,
     },
+    methods: {
+      login(data) {
+        console.log(data)
+      }
+    }
   };
 </script>
 
@@ -36,7 +41,7 @@
     flex-direction: row;
   }
   .left-half {
-    width: 50%;
+    width: 53%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -66,7 +71,6 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 40px;
   }
 
   .login-title h2 {
