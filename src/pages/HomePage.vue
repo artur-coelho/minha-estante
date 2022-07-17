@@ -1,12 +1,12 @@
 <template>
-  <div class="home-bg">
+  <div class="dark-bg">
     <header class="home-header">
       <div class="home-content">
         <h1 class="product-title">Minha Estante</h1>
         <h2 class="product-subtitle">sua plataforma de livros online</h2>
         <div class="buttons-container">
-          <base-button link to="/login" :size="'big'">LOGIN</base-button>
-          <base-button link to="/register" :size="'big'" :variant="'orange'"
+          <base-button link to="/login" size="big">LOGIN</base-button>
+          <base-button link to="/register" size="big" :variant="'orange'"
             >CADASTRAR</base-button
           >
         </div>
@@ -41,29 +41,16 @@
 </template>
 
 <script>
-  import BaseButton from '@/components/ui/BaseButton.vue';
-
   export default {
     name: 'HomePage',
-    components: {
-      BaseButton,
-    },
   };
 </script>
 
-<style>
+<style scoped>
   .icon-button {
     text-decoration: none;
     cursor: pointer;
     margin-right: 15px;
-  }
-
-  .home-bg {
-    display: flex;
-    background-color: #1a1a23;
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
   }
 
   .home-header {

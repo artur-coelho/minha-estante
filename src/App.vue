@@ -24,6 +24,14 @@
     margin: 0;
   }
 
+  .dark-bg {
+    display: flex;
+    background-color: #1a1a23;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+  }
+
   .product-title {
     margin: 0;
     font-family: 'Birthstone Bounce', cursive;
@@ -42,4 +50,5 @@
     line-height: 52px;
     color: #bdd6d2;
   }
+
 </style>
