@@ -21,7 +21,7 @@ def upgrade():
         'livro',
         sa.Column('isbn', sa.Integer, primary_key=True),
         sa.Column('usuario_id', sa.Integer, nullable=False),
-        sa.Column('estante_id', sa.Integer, nullable=False),
+        sa.Column('estante_id', sa.Integer, nullable=True),
         sa.Column('edicao', sa.String(50), nullable=False),
         sa.Column('editora', sa.String(50), nullable=False),
         sa.Column('nome', sa.String(50), nullable=False),
