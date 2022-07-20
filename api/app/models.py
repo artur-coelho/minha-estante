@@ -20,7 +20,7 @@ from sqlalchemy.sql.sqltypes import Float
 from app.database import Base
 from datetime import datetime, timezone
 
-from app.schemas import AudioFormat, Operation, BiometricDecision, SpoofingDecision
+
 
 
 class User(Base):
@@ -30,6 +30,29 @@ class User(Base):
     nome = Column(String, primary_key=True, unique=True)
     email = Column(String, primary_key=True, unique=True)
     senha = Column(String, primary_key=True, unique=True)
+
+class Livro(Base):
+    __tablename__ = "livro"  # noqa
+    __table_args__ = {"extend_existing": True}
+
+    isbn = Column(Integer, primary_key=True, index=True)
+    usuario_id = Column(Integer, ForeignKey("usuario.id"))
+    #estante_id = relationship("estante", backref="owner", overlaps="metainfo")
+    edicao = Column(String)
+    editora =  Column(String)
+    nome =  Column(String)
+    descricao =  Column(String)
+    tipo_capa = Column(String)
+    genero =  Column(String)
+    data_cadastro = Column(TIMESTAMP(timezone=True), default=func.now()) 
+
+
+    @validates("metainfo_json")
+    def metainfo_json_validator(self, key, value):
+        if value is None:
+            return None
+        return value
+
   
 
 
