@@ -1,5 +1,5 @@
 <template>
-  <div class="dark-bg">
+  <div class="dark-bg page-container">
     <header class="home-header">
       <div class="home-content">
         <h1 class="product-title">Minha Estante</h1>

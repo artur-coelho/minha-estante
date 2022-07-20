@@ -1,5 +1,5 @@
 <template>
-  <div class="dark-bg register-container">
+  <div class="dark-bg page-container register-container">
     <section class="left-half">
       <div class="form-container">
         <h2 class="register-title">Cadastro</h2>
@@ -30,7 +30,6 @@
 
 <style scoped>
   .register-container {
-    display: flex;
     flex-direction: row;
   }
   .left-half {
