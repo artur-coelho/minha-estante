@@ -47,6 +47,7 @@
   }
 
   .register-title {
+    margin-bottom: 2rem;
     font-family: 'Poppins';
     font-weight: 600;
     font-size: 36px;

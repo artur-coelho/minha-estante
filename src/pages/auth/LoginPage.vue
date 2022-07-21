@@ -74,6 +74,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 2rem;
   }
 
   .login-title h2 {

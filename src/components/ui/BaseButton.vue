@@ -54,7 +54,7 @@
   }
 
   .small {
-    padding: 20px 0;
+    padding: 20px 40px;
     font-weight: 600;
     font-size: 16px;
   }
