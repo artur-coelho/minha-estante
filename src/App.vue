@@ -13,6 +13,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
   * {
+    margin: 0;
     box-sizing: border-box;
   }
 
@@ -22,6 +23,21 @@
 
   body {
     margin: 0;
+  }
+
+  .page-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+  }
+
+  .dark-bg {
+    background-color: #1a1a23;
+  }
+
+  .light-bg {
+    background-color: #f0f0f7;
   }
 
   .product-title {
