@@ -35,7 +35,7 @@
   .left-half {
     background-color: #f0f0f7;
     width: 47%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

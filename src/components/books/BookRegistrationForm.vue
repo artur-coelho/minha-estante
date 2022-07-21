@@ -6,31 +6,73 @@
         <hr />
       </div>
       <div class="book-data-one">
-        <input class="basic-input" type="text" placeholder="ISBN" />
-        <input class="basic-input" type="text" placeholder="Nome do Livro" />
         <input
+          v-model="book.isbn"
+          class="basic-input"
+          type="text"
+          placeholder="ISBN"
+        />
+        <input
+          v-model="book.name"
+          class="basic-input"
+          type="text"
+          placeholder="Nome do Livro"
+        />
+        <input
+          v-model="book.genre"
           class="basic-input"
           type="text"
           placeholder="Selecione o gênero"
         />
-        <input class="basic-input" type="text" placeholder="Status" />
-        <input class="basic-input" type="text" placeholder="Editora" />
-        <input class="basic-input" type="text" placeholder="Edição" />
         <input
+          v-model="book.status"
+          class="basic-input"
+          type="text"
+          placeholder="Status"
+        />
+        <input
+          v-model="book.publishingCompany"
+          class="basic-input"
+          type="text"
+          placeholder="Editora"
+        />
+        <input
+          v-model="book.edition"
+          class="basic-input"
+          type="text"
+          placeholder="Edição"
+        />
+        <input
+          v-model="book.coverType"
           class="basic-input"
           type="text"
           placeholder="Selecione o tipo de capa"
         />
-        <input class="basic-input" type="text" placeholder="Total de páginas" />
-        <input class="basic-input" type="text" placeholder="Classificação" />
-        <input class="basic-input" type="text" placeholder="Idioma" />
+        <input
+          v-model="book.numberOfPages"
+          class="basic-input"
+          type="text"
+          placeholder="Total de páginas"
+        />
+        <input
+          v-model="book.rating"
+          class="basic-input"
+          type="text"
+          placeholder="Classificação"
+        />
+        <input
+          v-model="book.language"
+          class="basic-input"
+          type="text"
+          placeholder="Idioma"
+        />
       </div>
       <textarea
         placeholder="Descrição"
         class="basic-input"
         id="description"
         rows="5"
-        v-model.trim="description"
+        v-model.trim="book.description"
       ></textarea>
       <div class="book-data-two">
         <base-toggle label="Possui dedicatória?"></base-toggle>
@@ -111,9 +153,27 @@
   export default {
     data() {
       return {
-        description: '',
+        book: {
+          isbn: '',
+          name: '',
+          genre: '',
+          status: '',
+          publishingCompany: '',
+          edition: '',
+          coverType: '',
+          numberOfPages: null,
+          rating: '',
+          language: '',
+          description: '',
+        },
+
       };
     },
+    methods: {
+      saveBook() {
+        console.log(this.book)
+      }
+    }
   };
 </script>
 

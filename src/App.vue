@@ -27,7 +27,7 @@
 
   .page-container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     flex-direction: column;
   }
