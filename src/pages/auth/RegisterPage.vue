@@ -14,52 +14,55 @@
 </template>
 
 <script>
-  import RegisterForm from '@/components/auth/RegisterForm.vue';
+import axios from "axios";
+import RegisterForm from '@/components/auth/RegisterForm.vue';
 
-  export default {
-    components: {
-      RegisterForm,
+export default {
+  components: {
+    RegisterForm,
+  },
+  methods: {
+    register(user) {
+      axios.post("http://0.0.0.0:8000/user", user).then(() => {
+        this.$router.push({ path: "/login" })
+      })
     },
-    methods: {
-      register(data) {
-        console.log(data);
-      },
-    },
-  };
+  },
+};
 </script>
-
 <style scoped>
-  .register-container {
-    flex-direction: row;
-  }
-  .left-half {
-    background-color: #f0f0f7;
-    width: 47%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.register-container {
+  flex-direction: row;
+}
 
-  .form-container {
-    width: 22rem;
-  }
+.left-half {
+  background-color: #f0f0f7;
+  width: 47%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .register-title {
-    margin-bottom: 2rem;
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 36px;
-    color: #1a1a23;
-  }
+.form-container {
+  width: 22rem;
+}
 
-  .right-half {
-    width: 53%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.register-title {
+  margin-bottom: 2rem;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 36px;
+  color: #1a1a23;
+}
+
+.right-half {
+  width: 53%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 </style>

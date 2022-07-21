@@ -1,10 +1,24 @@
 from app.database import get_db
 from fastapi import FastAPI  
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 import app.crud as crud, app.models as models, app.schemas as schemas
 from app.database import SessionLocal, engine
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/user/')
 def listar_todos_usuarios(db: Session = Depends(get_db)):
@@ -37,7 +51,7 @@ def adicionar_livro(livro: schemas.Livro, db: Session = Depends(get_db)):
     #      raise HTTPException(
     #               status_code=status.HTTP_400_BAD_REQUEST, 
     #               detail="Id Nao existe")
-    return crud.create_livro(db=db, livro=livro)
+    return crud.criar_livro(db=db, livro=livro)
 
 @app.get('/livros/')
 def listar_livros(db: Session = Depends(get_db)):

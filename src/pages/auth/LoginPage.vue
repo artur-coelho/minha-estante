@@ -16,97 +16,95 @@
         <router-link to="/register">Cadastre-se</router-link>
       </div>
     </section>
-    <img
-      class="login-illustration"
-      src="@/assets/images/login-image.svg"
-      alt="woman choosing a book"
-    />
+    <img class="login-illustration" src="@/assets/images/login-image.svg" alt="woman choosing a book" />
   </div>
 </template>
 
 <script>
-  import LoginForm from '@/components/auth/LoginForm.vue';
+import LoginForm from '@/components/auth/LoginForm.vue';
 
-  export default {
-    components: {
-      LoginForm,
+export default {
+  components: {
+    LoginForm,
+  },
+  methods: {
+    login(data) {
+      console.log(data);
+      this.$router.push({ path: "/booksList" })
     },
-    methods: {
-      login(data) {
-        console.log(data);
-      },
-    },
-  };
+  },
+};
 </script>
 
 <style scoped>
-  .login-container {
-    flex-direction: row;
-  }
-  .left-half {
-    width: 53%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 15rem;
-    margin-right: 10rem;
-  }
+.login-container {
+  flex-direction: row;
+}
 
-  .right-half {
-    background-color: #f0f0f7;
-    width: 47%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.left-half {
+  width: 53%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 15rem;
+  margin-right: 10rem;
+}
 
-  .form-container {
-    width: 22rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.right-half {
+  background-color: #f0f0f7;
+  width: 47%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .login-title {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 2rem;
-  }
+.form-container {
+  width: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .login-title h2 {
-    font-family: 'Poppins';
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 36px;
-    color: #1a1a23;
-  }
+.login-title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
 
-  .login-footer {
-    width: 22rem;
-    margin-bottom: 3rem;
-  }
+.login-title h2 {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 36px;
+  color: #1a1a23;
+}
 
-  .login-footer span {
-    display: block;
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 16px;
-    color: #6a6180;
-  }
+.login-footer {
+  width: 22rem;
+  margin-bottom: 3rem;
+}
 
-  .login-footer a {
-    font-weight: 600;
-    color: #4a80f0;
-  }
+.login-footer span {
+  display: block;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 16px;
+  color: #6a6180;
+}
 
-  .login-illustration {
-    width: 436px;
-    position: absolute;
-    bottom: 0;
-    left: 33%;
-  }
+.login-footer a {
+  font-weight: 600;
+  color: #4a80f0;
+}
+
+.login-illustration {
+  width: 436px;
+  position: absolute;
+  bottom: 0;
+  left: 33%;
+}
 </style>
