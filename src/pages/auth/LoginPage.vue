@@ -1,5 +1,5 @@
 <template>
-  <div class="dark-bg login-container">
+  <div class="dark-bg page-container login-container">
     <section class="left-half">
       <h1 class="product-title">Minha Estante</h1>
       <h2 class="product-subtitle">sua plataforma de livros online</h2>
@@ -16,7 +16,11 @@
         <router-link to="/register">Cadastre-se</router-link>
       </div>
     </section>
-    <img class="login-illustration" src="@/assets/images/login-image.svg" alt="woman choosing a book">
+    <img
+      class="login-illustration"
+      src="@/assets/images/login-image.svg"
+      alt="woman choosing a book"
+    />
   </div>
 </template>
 
@@ -29,15 +33,14 @@
     },
     methods: {
       login(data) {
-        console.log(data)
-      }
-    }
+        console.log(data);
+      },
+    },
   };
 </script>
 
 <style scoped>
   .login-container {
-    display: flex;
     flex-direction: row;
   }
   .left-half {
@@ -71,6 +74,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 2rem;
   }
 
   .login-title h2 {
@@ -96,7 +100,7 @@
 
   .login-footer a {
     font-weight: 600;
-    color: #4A80F0;
+    color: #4a80f0;
   }
 
   .login-illustration {
